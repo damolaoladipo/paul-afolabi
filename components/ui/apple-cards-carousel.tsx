@@ -1,10 +1,12 @@
 "use client";
+
 import React, {
   useEffect,
   useRef,
   useState,
   createContext,
   useContext,
+  useCallback, // <-- FIX: ADDED useCallback
 } from "react";
 import {
   IconArrowNarrowLeft,
@@ -13,11 +15,12 @@ import {
 } from "@tabler/icons-react";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "motion/react";
-import Image, { ImageProps } from "next/image";
+import { ImageProps } from "next/image";
 import { useOutsideClick } from "@/hooks/use-outside-click";
 
 interface CarouselProps {
-  items: JSX.Element[];
+  // FIX: Changed JSX.Element[] to React.ReactElement[]
+  items: React.ReactElement[]; 
   initialScroll?: number;
 }
 
@@ -37,7 +40,8 @@ export const CarouselContext = createContext<{
 });
 
 export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
-  const carouselRef = React.useRef<HTMLDivElement>(null);
+  // FIX: Changed type to explicitly allow null
+  const carouselRef = useRef<HTMLDivElement | null>(null);
   const [canScrollLeft, setCanScrollLeft] = React.useState(false);
   const [canScrollRight, setCanScrollRight] = React.useState(true);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -68,22 +72,22 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
       carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
+  
+  const isMobile = () => {
+    return typeof window !== "undefined" && window.innerWidth < 768;
+  };
 
   const handleCardClose = (index: number) => {
     if (carouselRef.current) {
       const cardWidth = isMobile() ? 230 : 384; // (md:w-96)
       const gap = isMobile() ? 4 : 8;
-      const scrollPosition = (cardWidth + gap) * (index + 1);
+      const scrollPosition = (cardWidth + gap) * index;
       carouselRef.current.scrollTo({
         left: scrollPosition,
         behavior: "smooth",
       });
       setCurrentIndex(index);
     }
-  };
-
-  const isMobile = () => {
-    return window && window.innerWidth < 768;
   };
 
   return (
@@ -121,7 +125,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                     duration: 0.5,
                     delay: 0.2 * index,
                     ease: "easeOut",
-                    once: true,
+                    // FIX: Removed 'once: true' from transition in previous fix
                   },
                 }}
                 key={"card" + index}
@@ -163,8 +167,16 @@ export const Card = ({
   layout?: boolean;
 }) => {
   const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
-  const { onCardClose, currentIndex } = useContext(CarouselContext);
+  // FIX: Changed type to explicitly allow null
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  // FIX: Removed unused currentIndex lint suppression
+  const { onCardClose } = useContext(CarouselContext); 
+
+  // FIX: Stabilize handleClose using useCallback and its dependencies
+  const handleClose = useCallback(() => {
+    setOpen(false);
+    onCardClose(index);
+  }, [onCardClose, index]);
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
@@ -180,18 +192,15 @@ export const Card = ({
     }
 
     window.addEventListener("keydown", onKeyDown);
+    // FIX: Included handleClose in the dependency array
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open]);
+  }, [open, handleClose]); // <-- FIX: ADDED handleClose
 
-  useOutsideClick(containerRef, () => handleClose());
+  // FIX: Use a type assertion to satisfy the external useOutsideClick hook's strict type requirement
+  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () => handleClose());
 
   const handleOpen = () => {
     setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-    onCardClose(index);
   };
 
   return (
@@ -289,7 +298,7 @@ export const BlurImage = ({
       height={height}
       loading="lazy"
       decoding="async"
-      blurDataURL={typeof src === "string" ? src : undefined}
+      // Removed Next.js specific prop not supported on standard img tag
       alt={alt ? alt : "Background of a beautiful view"}
       {...rest}
     />
