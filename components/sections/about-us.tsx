@@ -1,23 +1,12 @@
-
 import { AboutUsData } from "@/_data/about-us";
 import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/ui/text-effect";
 import { ArrowUpRight } from "lucide-react";
 
-
 export default function AboutUs() {
   return (
     <section className="bg-white py-16 pt-20 md:py-32 dark:bg-[#171717]">
       <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
-        <img
-          className="rounded-(--radius) grayscale"
-          src={AboutUsData.image.src}
-          alt={AboutUsData.image.alt}
-          height={AboutUsData.image.height}
-          width={AboutUsData.image.width}
-          loading="lazy"
-        />
-
         {/* This is the main flex container for the heading and subheading */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-x-12">
           {/* Heading Section */}
@@ -58,15 +47,22 @@ export default function AboutUs() {
                       {AboutUsData.button.text}
                       <ArrowUpRight className="transition-transform duration-300 group-hover:rotate-45" />
                     </span>
-                    <div
-                      className="absolute inset-y-0 left-0 h-full w-full -translate-x-full transition-transform duration-300 group-hover:translate-x-0  bg-gradient-to-r from-[var(--color-green)] to-[var(--color-orange)]"
-                    ></div>
+                    <div className="absolute inset-y-0 left-0 h-full w-full -translate-x-full transition-transform duration-300 group-hover:translate-x-0  bg-gradient-to-r from-[var(--color-green)] to-[var(--color-orange)]"></div>
                   </a>
                 </Button>
               </div>
             </div>
           </div>
         </div>
+
+        <img
+          className="rounded-(--radius) grayscale"
+          src={AboutUsData.image.src}
+          alt={AboutUsData.image.alt}
+          height={AboutUsData.image.height}
+          width={AboutUsData.image.width}
+          loading="lazy"
+        />
       </div>
     </section>
   );

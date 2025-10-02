@@ -1,26 +1,23 @@
-import CommunitySection from "@/components/content-6";
 import AboutUs from "@/components/sections/about-us";
+import CountryCloud from "@/components/sections/country-cloud";
 import CallToAction from "@/components/sections/cta";
-import FAQs from "@/components/sections/faq";
-import Footer from "@/components/sections/footer";
 import HeroSection from "@/components/sections/hero-section";
-import MentorSection from "@/components/sections/mentors";
+import ProjectOne  from "@/components/sections/project-one";
+import ProjectTwo from "@/components/sections/project-two";
+
 
 
 const Home =() =>{
   return (
     <main className="min-h-screen w-full overflow-hidden bg-green text-foreground">
 
-
       <HeroSection/>
       <AboutUs/>
-       <MentorSection />
+      <CountryCloud/>
+      <ProjectOne/>
+      <ProjectTwo/>
        <CallToAction />
-       <FAQs/>
-       <CommunitySection/>
-       <Footer/>
-
-
+      
     </main>
   );
 }

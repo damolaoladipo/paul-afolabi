@@ -28,7 +28,7 @@ const Logo = (data: ILogo) => {
   }
 
   const imageSrc =
-    theme === "dark" ? "blocks/damola-dark.svg" : "blocks/damola-dark.svg";
+    theme === "dark" ? "blocks/pa-logo.svg" : "blocks/pa-logo.svg";
 
   // Only pass valid div props (filter out any props not valid for div)
   const divProps: React.HTMLAttributes<HTMLDivElement> = {};
@@ -45,8 +45,8 @@ const Logo = (data: ILogo) => {
           src={imageSrc}
           alt="Damola Oladipo"
           className="w-36"
-          width={100}
-          height={100}
+          width={10}
+          height={10}
           priority
         />
       </div>

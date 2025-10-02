@@ -10,6 +10,10 @@
     "cssVariables": true,
     "prefix": ""
   },
+
+  "registries": {
+    "@tailark": "https://tailark.com/r/{name}.json"
+  },
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
@@ -18,4 +22,4 @@
     "lib": "@/lib",
     "hooks": "@/hooks"
   }
-}  
+}

@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { siteConfig } from "@/_data/site-config";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Header } from "@/components/shared/header";
+import { AppThemeProvider } from "@/context/theme-provider";
+import Footer from "@/components/sections/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,14 +20,14 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: siteConfig.name,
-  description:siteConfig.description,
+  description: siteConfig.description,
   metadataBase: new URL(siteConfig.getStartedUrl),
   keywords: [
-    "theglobalma",
+    "paulafolabi",
     "Product Management",
     "Software Engineering",
     "Data Science",
-    "Open Source Contribution"
+    "Open Source Contribution",
   ],
   authors: [
     {
@@ -57,7 +60,7 @@ export const metadata: Metadata = {
     creator: siteConfig.links.creator,
   },
   icons: {
-    icon: `${siteConfig.url}/blocks/theglobalma.png`,
+    icon: `${siteConfig.url}/blocks/paulafolabi.png`,
     apple: "/apple-touch-icon.png",
   },
 };
@@ -72,11 +75,17 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        
-        {children}
-        
-        <Analytics/>
-        <SpeedInsights/>
+        <AppThemeProvider>
+              <Header />
+
+                  {children}
+
+              <Footer />
+        </AppThemeProvider>
+
+        <Analytics />
+        <SpeedInsights />
+
       </body>
     </html>
   );
