@@ -9,6 +9,6 @@ export const Navigation = [
   },
     {
     label: "My Resume",
-    href: "#resume",
+    href: "/resume",
   }
 ];

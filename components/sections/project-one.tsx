@@ -9,7 +9,7 @@ export default function ProjectOne() {
   ));
 
   return (
-    <div className="w-full h-full py-20">
+    <div className="w-full h-full py-20" id="projects">
       <h2 className="max-w-3xl pl-10 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
         Access Bank – Digital Transformation (Multi-country)
       </h2>

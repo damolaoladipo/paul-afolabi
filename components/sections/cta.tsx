@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function CallToAction(){
     return (
-        <section className="py-32">
+        <section className="py-32 bg-accent">
             <div className="mx-auto max-w-5xl px-6 rounded-[2rem] border py-16">
                 <div className="text-center">
                     <h2 className="text-title text-balance text-4xl font-semibold lg:text-5xl">Start Building</h2>

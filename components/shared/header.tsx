@@ -91,31 +91,31 @@ export const Header = () => {
               <div className=" w-full hidden md:block flex-col items-center justify-center space-y-3 sm:flex-row gap-2 sm:gap-3 sm:space-y-0 md:w-fit">
                 <ThemeToggle /> 
 
-                   <Button
-                                    asChild
-                                    variant="outline"
-                                    size="sm"
-                                    className={cn('lg:hidden pl-1')}>
-                                    <Link href="#">
-                                        <span>Login</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(scrolled && 'lg:hidden')}>
-                                    <Link href="#">
-                                        <span>Get in touch</span>
-                                    </Link>
-                                </Button>
-                                <Button
-                                    asChild
-                                    size="sm"
-                                    className={cn(scrolled ? 'lg:inline-flex' : 'hidden')}>
-                                    <Link href="#">
-                                        <span>Let&apos;s talk</span>
-                                    </Link>
-                                </Button>
+                  <Button
+                        asChild
+                        variant="outline"
+                        size="sm"
+                        className={cn('lg:hidden pl-1')}>
+                        <Link href="#">
+                            <span>Login</span>
+                        </Link>
+                    </Button>
+                    <Button
+                        asChild
+                        size="sm"
+                        className={cn(scrolled && 'lg:hidden')}>
+                        <Link href="/contact">
+                            <span>Get in touch</span>
+                        </Link>
+                    </Button>
+                    <Button
+                        asChild
+                        size="sm"
+                        className={cn(scrolled ? 'lg:inline-flex' : 'hidden')}>
+                        <Link href="/contact">
+                            <span>Let&apos;s talk</span>
+                        </Link>
+                    </Button>
           
               </div>
             </div>
