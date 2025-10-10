@@ -4,6 +4,7 @@ import CallToAction from "@/components/sections/cta";
 import HeroSection from "@/components/sections/hero-section";
 import ProjectOne  from "@/components/sections/project-one";
 import ProjectTwo from "@/components/sections/project-two";
+import SkillsSection from "@/components/sections/skills";
 
 
 
@@ -14,6 +15,7 @@ const Home =() =>{
       <HeroSection/>
       <AboutUs/>
       <CountryCloud/>
+      <SkillsSection/>
       <ProjectOne/>
       <ProjectTwo/>
        <CallToAction />

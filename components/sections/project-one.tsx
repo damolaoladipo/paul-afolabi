@@ -2,16 +2,17 @@
 
 import React from "react";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { ProjectOne } from "@/_data/projects";
 
-export default function ProjectOne() {
+export default function ProjectOneSection() {
   const cards = data.map((card, index) => (
     <Card key={card.src} card={card} index={index} />
   ));
 
   return (
     <div className="w-full h-full py-20" id="projects">
-      <h2 className="max-w-3xl pl-10 text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-        Access Bank – Digital Transformation (Multi-country)
+      <h2 className="max-w-3xl pl-4 text-4xl md:text-5xl font-medium text-left">
+        {ProjectOne.heading}
       </h2>
       <Carousel items={cards} />
     </div>

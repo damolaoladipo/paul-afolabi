@@ -44,8 +44,8 @@ export const Header = () => {
               </Link>
 
               
-              <div className="flex items-center space-x-2 lg:hidden">
-                <ThemeToggle  className="relative z-20 block cursor-pointer " />
+             <div className="flex items-center space-x-2 lg:hidden">
+                <ThemeToggle className="relative z-20 block cursor-pointer " />
 
               <button
                 onClick={() => setMenuState(!menuState)}
@@ -88,18 +88,8 @@ export const Header = () => {
                   ))}
                 </ul>
               </div>
-              <div className=" w-full hidden md:block flex-col items-center justify-center space-y-3 sm:flex-row gap-2 sm:gap-3 sm:space-y-0 md:w-fit">
+              <div className=" w-full md:w-fit flex flex-col items-center justify-center space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 ">
                 <ThemeToggle /> 
-
-                  <Button
-                        asChild
-                        variant="outline"
-                        size="sm"
-                        className={cn('lg:hidden pl-1')}>
-                        <Link href="#">
-                            <span>Login</span>
-                        </Link>
-                    </Button>
                     <Button
                         asChild
                         size="sm"

@@ -1,7 +1,8 @@
 export const heroData = {
-  heading: "I'm a Backend Engineer building reliable systems at scale",
+  badge: "Paul Afolabi - Software Engineer",
+  heading: "A Backend Engineer building reliable systems at scale",
   subheading:
-    "My bigger vision is to solve the world&apos;s most meaningful business and human problems using technology.",
+    "My vision is to build technological systems that deliver tangible and intangible value to businesses and humans every single day.",
 
   mockup: {
     light: {
@@ -27,7 +28,7 @@ export const heroData = {
   },
   button2: {
     id: "02",
-    href: "#contact",
+    href: "/contact",
     text: "Get in Touch",
     variant: "glow" as const,
     icon: "Arrow",

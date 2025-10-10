@@ -8,7 +8,7 @@ export default function CountryCloud() {
         <div className="flex flex-col md:items-center  md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
             <p className="md:text-end  text-left text-sm">
-              Serving millions across 13 countries in Africa
+              Serving millions across over 10 African countries
             </p>
           </div>
           <div className="relative py-6 md:w-[calc(100%-11rem)]">

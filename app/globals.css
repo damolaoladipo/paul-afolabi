@@ -110,17 +110,17 @@
 
 :root {
   /* Accent colors */
---brand:  oklch(76% 0.165 149);
+--brand:  oklch(73.0905% 0.16593 59.3886deg);
 --brand-foreground: oklch(75.77% 0.159 140);
 
-  --brand-color-teal: oklch(67% 0.122 201);
+  --brand-color-teal: oklch(0.248 0.072 220.38);
   --brand-color-yellow: oklch(86% 0.134 99);
-  --brand-color-green: oklch(76% 0.165 149);
+  --brand-color-green:  oklch(0.248 0.072 220.38);
   --brand-color-orange: oklch(65% 0.19 55);
 
-  --color-teal: #32b5bb;
+  --color-teal: oklch(0.248 0.072 220.38);
   --color-yellow: #e5d122;
-  --color-green: #6ad373;
+  --color-green:  oklch(0.248 0.072 220.38);
   --color-orange: #f87312;
 
   /* Customized shadcn/ui colors */
@@ -168,7 +168,7 @@
 
 .dark {
   /* Accent colors */
---brand:  oklch(76% 0.165 149);
+--brand: oklch(73.0905% 0.16593 59.3886deg);
 --brand-foreground: oklch(75.77% 0.159 140);
 
   --brand-color-teal: oklch(67% 0.122 201);

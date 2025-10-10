@@ -1,5 +1,5 @@
 export const ProjectOne = {
-  heading: "Access Bank – Digital Transformation (Multi-country)",
+  heading: "LIT Mobile Banking Application by First Bank",
   subheading:
     "My bigger vision is to solve the world&apos;s most meaningful business and human problems using technology.",
 };
@@ -7,7 +7,7 @@ export const ProjectOne = {
 
 
 export const ProjectTwo = {
-  heading: "I'm a Backend Engineer building reliable systems at scale",
+  heading: "Backend Software Engineer (Core contributor)",
   subheading: ""
 };
 

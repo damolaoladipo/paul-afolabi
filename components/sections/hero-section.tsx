@@ -51,8 +51,8 @@ export default function HeroSection() {
               <div className="sm:mx-auto lg:mt-0 lg:mr-auto text-left">
 
                 <div className="flex items-center text-sm text-neutral-700 dark:text-neutral-400">
-                  <DotIcon className="h-10 w-10 -ml-3" /> Hi, I’m Paul Afolabi
-                  👋
+                  <DotIcon className="h-10 w-10 -ml-3" />{heroData.badge}
+                  
                 </div>
 
                 <TextEffect
@@ -111,13 +111,13 @@ export default function HeroSection() {
 
                   <div className="group flex flex-1 rounded-[calc(var(--radius-sm)+0.125rem)]">
                     <Button
-                      key={heroData.button1.id}
+                      key={heroData.button2.id}
                       asChild
                       size="lg"
                       variant="outline"
                       className="bg-background relative flex h-11 flex-1 items-center justify-center overflow-hidden rounded-sm px-5 text-base transition-colors duration-300 hover:text-white"
                     >
-                      <a href={heroData.button1.href}>
+                      <a href={heroData.button2.href}>
                         <span className="relative z-10 flex items-center gap-3 text-nowrap transition-all duration-300 group-hover:translate-x-1">
                           {heroData.button2.text}
 
@@ -144,15 +144,15 @@ export default function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-                <div className="bg-background relative mx-auto max-w-5xl overflow-hidden rounded-2xl border p-4 ">
+              <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20 md:-mr-6">
+                <div className="bg-background relative mx-auto max-w-5xl overflow-hidden rounded-md border p-4 ">
                   {/* The video will replace the Image components. */}
                   <iframe
                     className="relative z-2 w-full rounded-2xl aspect-video"
                     width="100%"
                     height="auto" // 'auto' allows the aspect-video class to control height
-                    src="https://www.youtube.com/embed/YelN_vn95u4?autoplay=0&amp;fs=1&amp;rel=0"
-                    title="Cinematic Cello | Silver Linings | Aimee Norris"
+                    src="https://www.youtube.com/embed/KRTpBGQazCk?autoplay=0&amp;fs=1&amp;rel=0"
+                    title="How I Help Big Corporations Generate Over $500K in Revenue Every Year"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

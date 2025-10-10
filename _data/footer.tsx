@@ -2,50 +2,51 @@ import { InstagramIcon, LinkedInIcon, XIcon, YouTubeIcon } from "@/components/sh
 
 export const footerData = {
   brand: {
-    name: "Ogbomoso Innovates",
-    bio: "Ogbomoso Innovates is an initiative of the Ogbomoso State Employment Trust Fund (LSETF).",
-    address: "Address: 16 Billings Way, Oregun, Ikeja Ogbomoso, Nigeria",
-    telephone: "Telephone: +234 (0) 1 700 0945",
-    email: "Email: Ogbomosoinnovates@lsetf.ng",
+    name: "Paul Afolabi",
+    bio: "Paul Afolabi is a software engineer who has scaled digital banking at two of Africa’s top banks across 10+ countries, serving 100 million customers and an annual revenue of over $500K.",
+    address: "",
+    telephone: "Mail me: hello@paulafolabi.com",
+    email: "paulafolabi745@gmail.com",
     buitBy: "Made with ❤️ by Damola",
     copyright: ". All rights reserved.",
-    ownedBy: "Ogbomoso Innovates",
+    ownedBy: "Paul Afolabi",
   },
   socialLinks: [
     {
-      href: "https://www.instagram.com/Ogbomosoinnovates",
+      href: "https://instagram.com/afolabi_paul_",
       label: "Instagram",
       icon: InstagramIcon,
     },
     {
-      href: "https://www.youtube.com/lsetf",
+      href: "https://www.youtube.com/@paulthinky",
       label: "YouTube",
       icon: YouTubeIcon,
     },
     {
-      href: "https://www.linkedin.com/company/Ogbomoso-innovates",
+      href: "https://www.linkedin.com/in/paul-afolabi-1a2238169/",
       label: "LinkedIn",
       icon: LinkedInIcon,
     },
     {
-      href: "https://x.com/Ogbomosoinnovates",
+      href: "https://x.com/afo_labipaul",
       label: "X",
       icon: XIcon,
     },
   ],
     programs: {
-    group: "Programs",
+    group: "Links",
     items: [
-      { href: "/programs#workspace-voucher", label: "Workspace Vouchers" },
-      { href: "/programs#talent-development", label: "Talent Development" },
-      { href: "/programs#grant-for-innovators", label: "Grant for Innovators" },
+      { href: "#projects", label: "Projects" },
+      { href: "/resume", label: "Resume" },
+      { href: "https://medium.com/@paulafolabi745", label: "Articles" },
+      
     ],
   },
   about: {
     group: "About",
     items: [
-      { href: "/about-us", label: "About Us" },
-      { href: "/press", label: "Press" },
+      
+      { href: "/about", label: "About me" },
       { href: "/contact", label: "Contact" },
     ],
   }
