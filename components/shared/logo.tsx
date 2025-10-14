@@ -5,7 +5,6 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-// ✅ Define prop type properly
 export interface ILogo extends React.HTMLAttributes<HTMLDivElement> {
   large?: boolean;
 }
@@ -18,7 +17,7 @@ const LogoContainer = ({
 };
 
 const Logo = ({ large, className, ...rest }: ILogo) => {
-  const { resolvedTheme } = useTheme(); // ✅ Correct theme handling
+  const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -27,7 +26,6 @@ const Logo = ({ large, className, ...rest }: ILogo) => {
 
   if (!mounted) return null;
 
-  // ✅ Ensure correct image path
   const imageSrc =
     resolvedTheme === "dark"
       ? "/blocks/pa-logo-dark.svg"

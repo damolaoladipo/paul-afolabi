@@ -143,7 +143,7 @@ export default function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20 md:-mr-6">
+              <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20  mb-10 md:-mr-6">
                 <div className="bg-background relative mx-auto max-w-5xl overflow-hidden rounded-md border p-4 ">
                   {/* The video will replace the Image components. */}
                   <iframe

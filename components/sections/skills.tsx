@@ -1,28 +1,16 @@
-const skills = {
-  "Core languages": ["Rust", "Typescript", "PHP", "SQL"],
-  Frameworks: ["Actix", "Tokio", "Vue/Nuxt", "React", "Laravel"],
-  Infrastructure: [
-    "Docker",
-    "AWS",
-    "Kafka",
-    "Redis",
-    "PostgreSQL",
-    "Prometheus",
-    "HAProxy",
-  ],
-  "Systems Design Tools": ["Figma", "Opentelemetry", "REST"],
-};
 
 const SkillsSection = () => {
     
   const leftColumnSkills = {
-    "Core languages": ["Rust", "Typescript", "PHP", "SQL"],
-    Infrastructure: ["Docker", "AWS", "Kafka", "Redis", "PostgreSQL", "Prometheus", "HAProxy"],
+    "Core languages": ["C#", "Java", "Javascript", "Python", "Git", "SQL"],
+    Infrastructure: ["Docker", "Azure DevOps", "AWS", "Kafka", "Redis", "SUSE Rancher", "Linux", "CyberArk", "Microsoft IIS"],
+    "Storage and Databases": ["MSSQL", "OracleSQL", "MongoDB", "Azure Blob"]
   }
 
   const rightColumnSkills = {
-    Frameworks: ["Actix", "Tokio", "Vue/Nuxt", "React", "Laravel"],
-    "Systems Design Tools": ["Figma", "Opentelemetry", "REST"],
+    Frameworks: ["ASP.NET", "Entity Framework", "Fast API", "Angular"],
+    "Systems Design Tools": ["Lucid", "REST"],
+    "AI and Machine Learning": ["ML.NET", "AI Red Teaming", "Transformers Architecture", "AWS Sage Maker"]
   }
 
   return (
@@ -31,7 +19,7 @@ const SkillsSection = () => {
 
         {/* Header */}
         <div className="">
-          <h1 className="mt-20 mb-12 text-4xl md:text-5xl font-medium text-left">My Skills</h1>
+          <h1 className="mt-10 mb-12 text-4xl md:text-5xl font-medium text-left">My Skills</h1>
         </div>
 
         <div className="grid md:grid-cols-2 gap-x-16 gap-y-12">
