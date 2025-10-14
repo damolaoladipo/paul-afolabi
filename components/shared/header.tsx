@@ -32,7 +32,7 @@ export const Header = () => {
           scrolled && "bg-background/50 backdrop-blur-3xl",
         )}
       >
-        <div className="mx-auto max-w-5xl items-center justify-center px-6 transition-all duration-300">
+        <div className="mx-auto max-w-7xl items-center justify-center px-2 md:px-6 transition-all duration-300">
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link
@@ -103,7 +103,7 @@ export const Header = () => {
                         size="sm"
                         className={cn(scrolled ? 'lg:inline-flex' : 'hidden')}>
                         <Link href="/contact">
-                            <span>Let&apos;s talk</span>
+                            <span>Send me a mail</span>
                         </Link>
                     </Button>
           

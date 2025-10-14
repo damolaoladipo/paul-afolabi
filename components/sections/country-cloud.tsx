@@ -4,7 +4,7 @@ import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 export default function CountryCloud() {
   return (
     <section className="bg-background overflow-hidden py-10 md:py-10">
-      <div className="group relative m-auto max-w-6xl px-2">
+      <div className="group relative m-auto max-w-7xl px-2">
         <div className="flex flex-col md:items-center  md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
             <p className="md:text-end  text-left text-sm">

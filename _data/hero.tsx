@@ -1,6 +1,6 @@
 export const heroData = {
   badge: "Paul Afolabi - Software Engineer",
-  heading: "A Backend Engineer building reliable systems at scale",
+  heading: "My solutions currently serve over 100M customers and increase annual revenue by more than $500K.",
   subheading:
     "My vision is to build technological systems that deliver tangible and intangible value to businesses and humans every single day.",
 

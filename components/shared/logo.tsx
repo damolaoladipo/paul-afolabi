@@ -1,60 +1,50 @@
 "use client";
 
-import { ILogo } from "@/utils/interfaces";
 import { clsx } from "clsx";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+
+// ✅ Define prop type properly
+export interface ILogo extends React.HTMLAttributes<HTMLDivElement> {
+  large?: boolean;
+}
 
 const LogoContainer = ({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) => {
   return <div className={clsx(className, "h-48 w-48 pr-10")} {...props} />;
-}
+};
 
-/* eslint-disable @typescript-eslint/no-unused-vars */
-const Logo = (data: ILogo) => {
-  const { large, className, ...rest } = data;
-  const { theme } = useTheme();
+const Logo = ({ large, className, ...rest }: ILogo) => {
+  const { resolvedTheme } = useTheme(); // ✅ Correct theme handling
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  if (!mounted) {
-    return null;
-  }
+  if (!mounted) return null;
 
+  // ✅ Ensure correct image path
   const imageSrc =
-    theme === "dark" ? "blocks/pa-logo.svg" : "blocks/pa-logo.svg";
-
-  // Only pass valid div props (filter out any props not valid for div)
-  const divProps: React.HTMLAttributes<HTMLDivElement> = {};
-  if (rest.id) divProps.id = rest.id;
-  if (rest.style) divProps.style = rest.style;
-  if (rest.title) divProps.title = rest.title;
-  // Add more allowed div props as needed
+    resolvedTheme === "dark"
+      ? "/blocks/pa-logo-dark.svg"
+      : "/blocks/pa-logo.svg";
 
   return (
-    <>
-      {" "}
-      <div className={clsx(className, "pointer-events-auto")} {...divProps}>
-        <Image
-          src={imageSrc}
-          alt="Damola Oladipo"
-          className="w-36"
-          width={10}
-          height={10}
-          priority
-        />
-      </div>
-    </>
+    <div className={clsx(className, "pointer-events-auto")} {...rest}>
+      <Image
+        src={imageSrc}
+        alt="Damola Oladipo"
+        className={clsx("w-36 dark:w-28", large && "w-36 dark:w-28")}
+        width={144}
+        height={144}
+        priority
+      />
+    </div>
   );
 };
 
-export {
-  Logo,
-    LogoContainer   
-}
+export { Logo, LogoContainer };

@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function AboutUs() {
   return (
     <section className="bg-white py-16 pt-20 md:py-32 dark:bg-[#171717]">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
+      <div className="mx-auto max-w-7xl space-y-8 px-6 md:space-y-12">
         {/* This is the main flex container for the heading and subheading */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-start md:gap-x-12">
           {/* Heading Section */}
@@ -15,7 +15,7 @@ export default function AboutUs() {
               preset="fade-in-blur"
               speedSegment={0.3}
               as="h1"
-              className="mt-6 max-w-2xl text-4xl md:text-5xl font-medium text-left"
+              className="mt-6 max-w-2xl text-4xl md:text-4xl font-medium text-left"
             >
               {AboutUsData.heading}
             </TextEffect>
@@ -29,7 +29,7 @@ export default function AboutUs() {
               speedSegment={0.3}
               delay={0.5}
               as="p"
-              className="mt-8 max-w-2xl text-lg text-pretty text-left"
+              className="mt-6 max-w-2xl text-lg text-left"
             >
               {AboutUsData.subheading}
             </TextEffect>
@@ -54,7 +54,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-
+{/* 
         <img
           className="rounded-(--radius) grayscale"
           src={AboutUsData.image.src}
@@ -62,7 +62,7 @@ export default function AboutUs() {
           height={AboutUsData.image.height}
           width={AboutUsData.image.width}
           loading="lazy"
-        />
+        /> */}
       </div>
     </section>
   );

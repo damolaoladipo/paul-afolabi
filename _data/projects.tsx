@@ -1,14 +1,13 @@
 export const ProjectOne = {
-  heading: "LIT Mobile Banking Application by First Bank",
-  subheading:
-    "My bigger vision is to solve the world&apos;s most meaningful business and human problems using technology.",
+  heading: "AccessMore by Access Bank",
+  url: ""
 };
 
 
 
 export const ProjectTwo = {
-  heading: "Backend Software Engineer (Core contributor)",
-  subheading: ""
+  heading: "LIT App by First Bank",
+  url: ""
 };
 
 

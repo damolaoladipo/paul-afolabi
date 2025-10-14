@@ -115,14 +115,7 @@
 
   --brand-color-teal: oklch(0.248 0.072 220.38);
   --brand-color-yellow: oklch(86% 0.134 99);
-  --brand-color-green:  oklch(0.248 0.072 220.38);
-  --brand-color-orange: oklch(65% 0.19 55);
-
-  --color-teal: oklch(0.248 0.072 220.38);
-  --color-yellow: #e5d122;
-  --color-green:  oklch(0.248 0.072 220.38);
-  --color-orange: #f87312;
-
+ 
   /* Customized shadcn/ui colors */
   --radius: 0.65rem;
   --background: oklch(1 0 0);
@@ -137,8 +130,8 @@
   --secondary-foreground: oklch(0.21 0.006 285.885);
   --muted: oklch(0.967 0.001 286.375);
   --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.21 0.006 285.885);
+  --accent: oklch(0.248 0.072 220.38);
+  --accent-foreground:  oklch(0.967 0.001 286.375); 
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0.004 286.32);
   --input: oklch(0.92 0.004 286.32);
@@ -171,15 +164,8 @@
 --brand: oklch(73.0905% 0.16593 59.3886deg);
 --brand-foreground: oklch(75.77% 0.159 140);
 
-  --brand-color-teal: oklch(67% 0.122 201);
+  --brand-color-teal: oklch(0.248 0.072 220.38);
   --brand-color-yellow: oklch(86% 0.134 99);
-  --brand-color-green: oklch(76% 0.165 149);
-  --brand-color-orange: oklch(65% 0.19 55);
-
-  --color-teal: #32b5bb;
-  --color-yellow: #e5d122;
-  --color-green: #6ad373;
-  --color-orange: #f87312;
 
   /* Customized shadcn/ui colors */
   --background: oklch(0.141 0.005 285.823);
@@ -188,8 +174,8 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.21 0.006 285.885);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.546 0.245 262.881);
-  --primary-foreground: oklch(0.379 0.146 265.522);
+  --primary:  oklch(0.248 0.072 220.38);
+  --primary-foreground: oklch(0.985 0 0);
   --secondary: oklch(0.274 0.006 286.033);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.274 0.006 286.033);

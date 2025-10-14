@@ -8,7 +8,7 @@ export default function CallToAction(){
         <section className="py-32 bg-brand">
             {/* Reduced horizontal padding (px-60) for a better mobile-first layout. 
                 Consider using responsive classes like px-4 sm:px-10 lg:px-20. */}
-            <div className="mx-auto max-w-5xl px-4 sm:px-10 lg:px-20 rounded-[2rem] border py-16">
+            <div className="mx-auto max-w-7xl px-4 sm:px-10 lg:px-20 rounded-[2rem] border py-16">
                 {/* The text-center class already handles horizontal centering for block elements and text. */}
                 <div className="text-center"> 
                     <h2 className="text-title text-balance text-4xl font-semibold lg:text-5xl">Got a problem worth solving?</h2>

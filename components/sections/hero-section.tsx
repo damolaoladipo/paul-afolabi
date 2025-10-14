@@ -2,7 +2,6 @@ import React from "react";
 
 import { ArrowUpRight, DotIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
 import { TextEffect } from "@/components/ui/text-effect";
 import { AnimatedGroup } from "@/components/ui/animated-group";
 import { heroData } from "@/_data/hero";
@@ -59,7 +58,7 @@ export default function HeroSection() {
                   preset="fade-in-blur"
                   speedSegment={0.3}
                   as="h1"
-                  className=" max-w-2xl text-5xl font-medium text-left md:text-6xl"
+                  className=" max-w-2xl text-5xl font-medium text-left md:text-4xl"
                 >
                   {heroData.heading}
                 </TextEffect>
@@ -151,7 +150,7 @@ export default function HeroSection() {
                     className="relative z-2 w-full rounded-2xl aspect-video"
                     width="100%"
                     height="auto" // 'auto' allows the aspect-video class to control height
-                    src="https://www.youtube.com/embed/KRTpBGQazCk?autoplay=0&amp;fs=1&amp;rel=0"
+                    src="https://www.youtube.com/embed/59Eji3fQj3E?autoplay=0&amp;fs=1&amp;rel=0"
                     title="How I Help Big Corporations Generate Over $500K in Revenue Every Year"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
