@@ -22,7 +22,7 @@ const Home =() =>{
       <ProjectOne/>
       <FirstBank/>
       <ProjectTwo/>
-       <CallToAction />
+      <CallToAction />
       
     </main>
   );
