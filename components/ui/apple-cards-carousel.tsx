@@ -161,18 +161,17 @@ export const Card = ({
   card,
   index,
   layout = false,
+  className, // ✅ external styling
 }: {
   card: Card;
   index: number;
   layout?: boolean;
+  className?: string;
 }) => {
   const [open, setOpen] = useState(false);
-  // FIX: Changed type to explicitly allow null
   const containerRef = useRef<HTMLDivElement | null>(null);
-  // FIX: Removed unused currentIndex lint suppression
-  const { onCardClose } = useContext(CarouselContext); 
+  const { onCardClose } = useContext(CarouselContext);
 
-  // FIX: Stabilize handleClose using useCallback and its dependencies
   const handleClose = useCallback(() => {
     setOpen(false);
     onCardClose(index);
@@ -180,28 +179,19 @@ export const Card = ({
 
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        handleClose();
-      }
+      if (event.key === "Escape") handleClose();
     }
 
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = open ? "hidden" : "auto";
     window.addEventListener("keydown", onKeyDown);
-    // FIX: Included handleClose in the dependency array
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [open, handleClose]); // <-- FIX: ADDED handleClose
+  }, [open, handleClose]);
 
-  // FIX: Use a type assertion to satisfy the external useOutsideClick hook's strict type requirement
-  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () => handleClose());
+  useOutsideClick(containerRef as React.RefObject<HTMLDivElement>, () =>
+    handleClose()
+  );
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+  const handleOpen = () => setOpen(true);
 
   return (
     <>
@@ -215,12 +205,9 @@ export const Card = ({
               className="fixed inset-0 h-full w-full bg-black/80 backdrop-blur-lg"
             />
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
               ref={containerRef}
               layoutId={layout ? `card-${card.title}` : undefined}
-              className="relative z-[60] mx-auto my-10 h-fit max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
+              className="relative z-[60] mx-auto my-10 max-w-5xl rounded-3xl bg-white p-4 font-sans md:p-10 dark:bg-neutral-900"
             >
               <button
                 className="sticky top-4 right-0 ml-auto flex h-8 w-8 items-center justify-center rounded-full bg-black dark:bg-white"
@@ -245,13 +232,22 @@ export const Card = ({
           </div>
         )}
       </AnimatePresence>
+
+      {/* ✅ Flexible card layout with optional custom styling */}
       <motion.button
         layoutId={layout ? `card-${card.title}` : undefined}
         onClick={handleOpen}
-        className="relative z-10 flex h-80 w-56 flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 md:h-[40rem] md:w-96 dark:bg-neutral-900"
+        className={cn(
+          // Base styles
+          "relative z-10 flex flex-col items-start justify-start overflow-hidden rounded-3xl bg-gray-100 dark:bg-neutral-900",
+          // Default sizing for mobile and desktop
+          "h-72 w-52 sm:h-80 sm:w-64 md:h-[30rem] md:w-[22rem] lg:h-[36rem] lg:w-[28rem]",
+          // Allow custom external styles
+          className
+        )}
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 z-30 h-full bg-gradient-to-b from-black/50 via-transparent to-transparent" />
-        <div className="relative z-40 p-8">
+        <div className="relative z-40 p-6 md:p-8">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
             className="text-left font-sans text-sm font-medium text-white md:text-base"
@@ -260,21 +256,24 @@ export const Card = ({
           </motion.p>
           <motion.p
             layoutId={layout ? `title-${card.title}` : undefined}
-            className="mt-2 max-w-xs text-left font-sans text-xl font-semibold [text-wrap:balance] text-white md:text-3xl"
+            className="mt-2 max-w-xs text-left font-sans text-lg font-semibold text-white md:text-2xl"
           >
             {card.title}
           </motion.p>
         </div>
+
+        {/* ✅ Image is now fully responsive and supports any ratio */}
         <BlurImage
           src={card.src}
           alt={card.title}
-          fill
-          className="absolute inset-0 z-10 object-cover"
+          className="absolute inset-0 z-10 object-cover object-center h-full w-full"
         />
       </motion.button>
     </>
   );
 };
+
+
 
 export const BlurImage = ({
   height,

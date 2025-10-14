@@ -22,9 +22,16 @@ export default function ProjectOneSection() {
 const data = [
   {
     category: " ",
-    title: " ",
+    title: "Access Bank",
     src: "/blocks/accessbank/image-1.png",
-    content: <></>,
+    content: (
+  <p>
+    Business Problem: Manual onboarding was slow and frustrating, discouraging new customers. <br />
+    Solution Developed: Built biometric onboarding feature as a microservice. <br />
+    Business Impact: Reduced onboarding time from &lt;10 mins → 5 mins. <br />
+    Achieved adoption by 10K+ users in first 3 weeks. <br />
+    One of the fastest microservices (&lt;150ms response time).
+  </p>)
   },
   {
     category: "",

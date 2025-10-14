@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 export default function CallToAction(){
     return (
-        <section className="py-32 bg-brand">
+        <section className="bg-brand">
             {/* Reduced horizontal padding (px-60) for a better mobile-first layout. 
                 Consider using responsive classes like px-4 sm:px-10 lg:px-20. */}
             <div className="mx-auto max-w-7xl px-4 sm:px-10 lg:px-20 rounded-[2rem] border py-16">

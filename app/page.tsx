@@ -1,5 +1,6 @@
 import AboutMe from "@/components/sections/about-us";
 import AccessBank from "@/components/sections/access";
+import BackOfficeSection from "@/components/sections/back-office";
 import CountryCloud from "@/components/sections/country-cloud";
 import CallToAction from "@/components/sections/cta";
 import FirstBank from "@/components/sections/first-bank";
@@ -15,13 +16,14 @@ const Home =() =>{
     <main className="min-h-screen w-full overflow-hidden bg-green text-foreground">
 
       <HeroSection/>
-      <CountryCloud/>
-      <AboutMe/>
+      <CountryCloud/>   
       <SkillsSection/>
+      <AboutMe/>
       <AccessBank/>
       <ProjectOne/>
       <FirstBank/>
       <ProjectTwo/>
+      <BackOfficeSection/>
       <CallToAction />
       
     </main>

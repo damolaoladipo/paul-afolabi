@@ -14,3 +14,17 @@ export const AboutUsData = {
     variant: "default" as const,
   },
 }
+
+// lib/about-data.ts
+
+export const ABOUT_ME_DATA = {
+  // Image for the About Me section
+  imageUrl: "/blocks/paul.jpg",
+  imageAlt: "Paul Afolabi - Systems Software Engineer",
+
+  // The complete professional summary text
+  professionalSummary: "I am a systems and infrastructure-minded software engineer with experience across both enterprise and startup environments, building products that collectively serve over 100 million customers in 10+ countries and process more than $50k in transactions daily. My work spans the design and development of event-driven backend systems, implementation of low-latency optimization techniques, and orchestration of distributed services into scalable microservice architectures. I am passionate about building reliable, secure, and performant systems that power seamless user experiences at scale.",
+  
+  // A title for the section (optional but good for context)
+  sectionTitle: "About Me",
+};

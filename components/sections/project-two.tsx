@@ -22,9 +22,19 @@ export default function ProjectTwoSection() {
 const data = [
   {
     category: "",
-    title: "",
+    title: "Account Opening Service",
     src: "/blocks/firstbank/lifestyle.png",
-    content: "",
+    content: (
+  <p>
+    Business Problem: Onboarding new customers took up to 2 working days, limiting customer acquisition. <br />
+    Solution Developed: Built a microservice integrated with 5 internal systems and 1 user-facing app (AccessMore).
+    Localized for 10 African subsidiaries, including compliance and language support.<br />
+    Business Impact: Reduced onboarding time from 10 mins → 5 mins. <br />
+    Increased new account openings to 1,000+ daily (from &lt;200). <br />
+    One of the fastest microservices (&lt;150ms response time).
+  </p>
+),
+
   },
   {
     category: "",

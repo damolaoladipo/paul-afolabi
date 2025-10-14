@@ -11,3 +11,8 @@ export const ProjectTwo = {
 };
 
 
+export const ProjectBackOffice = {
+  heading: "LIT App Back Offiice by First Bank",
+  url: ""
+}
+
